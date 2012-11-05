@@ -2,11 +2,11 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.luke.newapp"
-        version   = "3.0.2">
+        version   = "3.0.1">
     <name>Luke's Amazing App</name>
 
     <description>
-        Accelerometer, Camera, Database, Geolocation & Database Information
+        Accelerometer, Camera, Database & Geolocation
     </description>
 
     <author href="http://phonegap.com" email="support@phonegap.com">
