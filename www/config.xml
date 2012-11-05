@@ -3,10 +3,10 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.luke.newapp"
         version   = "3.0.1">
-    <name>Luke's App</name>
+    <name>Luke's Amazing App</name>
 
     <description>
-        Accelerometer and Camera
+        Accelerometer, Camera and Database
     </description>
 
     <author href="http://phonegap.com" email="support@phonegap.com">
