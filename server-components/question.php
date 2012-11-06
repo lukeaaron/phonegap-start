@@ -12,15 +12,15 @@ mysql_select_db($database, $con);
 $sql = "SELECT QuestionID, Question, CategoryID FROM Questions ORDER BY RAND() LIMIT 1";
 $result = mysql_query($sql) or die ("Query error: " . mysql_error());
 
-$row = mysql_fetch_assoc($result);
-//$records = array();
+//$row = mysql_fetch_assoc($result);
+$records = array();
 
-//while($row = mysql_fetch_assoc($result)) {
-//	$records[] = $row;
-//}
+while($row = mysql_fetch_assoc($result)) {
+	$records[] = $row;
+}
 
 mysql_close($con);
 
-echo $_GET['jsoncallback'] . '(' . json_encode($row) . ');';
-//echo $_GET['jsoncallback'] . '(' . json_encode($records) . ');';
+//echo $_GET['jsoncallback'] . '(' . json_encode($row) . ');';
+echo $_GET['jsoncallback'] . '(' . json_encode($records) . ');';
 ?>

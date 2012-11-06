@@ -13,16 +13,16 @@ $(document).ready(function(){
 		timeout: 5000,
 		success: function(data, status){
 			
-			var question = '<p>(Category ID: '+item.CategoryID+')<br>Question: '+item.Question+'</p>';
-			output.append(question);
+			//var question = '<p>(Category ID: '+item.CategoryID+')<br>Question: '+item.Question+'</p>';
+			//output.append(question);
 			
-			//$.each(data, function(i,item){ 
-				//var landmark = '<h1>'+item.name+'</h1>'
-				//+ '<p>'+item.latitude+'<br>'
-				//+ item.longitude+'</p>';
+			$.each(data, function(i,item){ 
+				var rndquestion = '<h1>'+item.Question+'</h1>'
+				+ '<p>Category ID: '+item.CategoryID+'<br>Question ID: '
+				+ item.QuestionID+'</p>';
 			
-				//output.append(landmark);
-			//});
+				output.append(rndquestion);
+			});
 		},
 		error: function(){
 		   output.text('There was an error loading the data.');
