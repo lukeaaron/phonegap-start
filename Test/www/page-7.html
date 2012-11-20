@@ -8,6 +8,28 @@
 	<script type="text/javascript" charset="utf-8" src="cordova-2.0.0.js"></script>
 	<script src="js/jquery-1.7.2.min.js"></script>
 	<script src="js/load-json-question.js"></script>
+    
+    <script type="text/javascript" charset="utf-8">
+		$('form').submit(function(){
+			var questionID = $(this).parent().attr('data-question-id');
+			var postData = $(this).serialize();
+			 
+			$.ajax({
+				type: 'POST',
+				data: postData+'&amp;qid='+questionID,
+				url: 'http://lukekowald.com/mobile/github/phonegap-start/server-components/post-answer.php',
+				success: function(data){
+					console.log(data);
+					alert('Your answer was successfully saved.');
+				},
+				error: function(){
+					console.log(data);
+					alert('There was an error saving your answer.');
+				}
+			});
+			return false;
+		});
+	</script>
 </head>
 <body>
 <h1>New Game</h1>
@@ -22,29 +44,6 @@
     <input id="submit" name="submit" type="submit" value="Save">
 </form>
 </div>
-
-<script>
-$('form').submit(function(){
-    var questionID = $(this).parent().attr('data-question-id');
-    var postData = $(this).serialize();
-     
-    $.ajax({
-        type: 'POST',
-        data: postData+'&amp;qid='+questionID,
-        url: 'http://lukekowald.com/mobile/github/phonegap-start/server-components/post-answer.php',
-        success: function(data){
-            console.log(data);
-            alert('Your answer was successfully saved.');
-        },
-        error: function(){
-            console.log(data);
-            alert('There was an error saving your answer.');
-        }
-    });
-    return false;
-});
-</script>
-
 
 <p><a href="index.html">Return home</a></p>
 </body>
