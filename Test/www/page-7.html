@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+
+	<script type="text/javascript" charset="utf-8" src="cordova-2.0.0.js"></script>
+	<script src="js/jquery-1.7.2.min.js"></script>
+	<script src="js/load-json-question.js"></script>
+</head>
+<body>
+<h1>New Game</h1>
+<div id="output"></div>
+
+<div id="questionid-1" data-question-id="1"><!-- auto-insert questionid into id and custom data attribute -->
+<form>
+    <label for="answer">
+        <b>Answer</b><br>
+        <textarea id="answer" name="answer"></textarea>
+    </label>
+    <input id="submit" name="submit" type="submit">
+</form>
+</div>
+
+<script>
+$('form').submit(function(){
+    var questionID = $(this).parent().attr('data-question-id');
+    var postData = $(this).serialize();
+     
+    $.ajax({
+        type: 'POST',
+        data: postData+'&amp;qid='+questionID,
+        url: 'http://lukekowald.com/mobile/github/phonegap-start/server-components/post-answer.php',
+        success: function(data){
+            console.log(data);
+            alert('Your answer was successfully saved.');
+        },
+        error: function(){
+            console.log(data);
+            alert('There was an error saving your answer.');
+        }
+    });
+    return false;
+});
+</script>
+
+
+<p><a href="index.html">Return home</a></p>
+</body>
+</html>
