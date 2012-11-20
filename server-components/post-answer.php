@@ -1,5 +1,5 @@
 <?php
-header('Content-type: application/json');
+//header('Content-type: application/json');
 
 $server = "itsadailythingcom.fatcowmysql.com";
 $username = "usrbluffed";
@@ -20,4 +20,6 @@ if (!mysql_query($sql, $con)) {
 }
 
 mysql_close($con);
+
+//echo $_GET['jsoncallback'] . '(' . json_encode($records) . ');';
 ?>
