@@ -10,14 +10,14 @@
     
     <script type="text/javascript" charset="utf-8">
 		$('form').submit(function(){
-			var questionID = $(this).parent().attr('data-question-id');
+			//var questionID = $(this).parent().attr('data-question-id');
 			var postData = $(this).serialize();
 			 
 			$.ajax({
 				type: 'POST',
 				dataType: 'json',
 				url: 'http://lukekowald.com/mobile/github/phonegap-start/server-components/post-answer.php',
-				data: postData+'&amp;qid='+questionID,
+				data: postData,//+'&amp;qid='+questionID,
 				success: function(data){
 					console.log(data);
 					alert('Your answer was successfully saved.');
