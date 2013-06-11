@@ -1,5 +1,5 @@
 <?php
-//header('Content-type: application/json');
+header('Content-type: application/json');
 
 $server = "itsadailythingcom.fatcowmysql.com";
 $username = "usrbluffed";
