@@ -16,5 +16,7 @@
     <author href="http://lukekowald.com/" email="luke@lukekowald.com">
         Luke Kowald
     </author>
+	
+	<icon src="icon.png" />
 
 </widget>
